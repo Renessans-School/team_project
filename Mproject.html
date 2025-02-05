@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renessans Maktabi</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      transition: background 1s;
+    }
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.script-tutorials.com/demos/360/images/stars.png') repeat;
+      animation: moveStars 50s linear infinite;
+      transition: opacity 1s;
+    }
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: -10000px 5000px; }
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 1s ease-in-out;
+    }
+    h1 {
+      font-size: 3em;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px white;
+      transition: transform 2s ease-in-out, font-size 1s ease-in-out, color 1s;
+    }
+    p {
+      font-size: 1.5em;
+      margin-top: 10px;
+      text-shadow: 0 0 5px white;
+      transition: opacity 1s ease-in-out;
+    }
+    .navbar {
+      display: none;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: darkblue;
+      padding: 15px 0;
+      text-align: center;
+      transition: opacity 1s ease-in-out;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 1.2em;
+    }
+  </style>
+  <script>
+    function changeBackground() {
+      document.body.style.background = 'linear-gradient(to right, white, darkblue)';
+      document.querySelector('.stars').style.opacity = '0';
+      const title = document.querySelector('h1');
+      const message = document.querySelector('p');
+      const navbar = document.querySelector('.navbar');
+
+      title.style.transform = 'translateY(-350px)';
+      title.style.fontSize = '1.5em';
+      title.style.color = 'darkblue';
+      message.style.opacity = '0';
+
+      navbar.style.display = 'block';
+      navbar.style.opacity = '1';
+    }
+  </script>
+</head>
+<body>
+<div class="stars"></div>
+<div class="container" onclick="changeBackground()">
+  <h1>Renessans Maktabi</h1>
+  <p>Xush kelibsiz</p>
+</div>
+<div class="navbar">
+  <a href="#">Bosh sahifa</a>
+  <a href="#">Yangiliklar</a>
+  <a href="#">Ma'lumot</a>
+  <a href="#">Narxlar</a>
+</div>
+</body>
+</html>
