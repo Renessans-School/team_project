@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#gameArea {
+    position: relative;
+    width: 800px;
+    height: 200px;
+    background-color: #87CEEB;
+    border: 2px solid #000;
+    overflow: hidden;
+}
+
+#dino {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 40px;
+    height: 50px;
+    background-color: green;
+    transition: bottom 0.3s ease-in-out; /* Dinozavrni yuqoriga va pastga harakatlantirish */
+}
+
+#cactus {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 50px;
+    background-color: brown;
+    animation: cactusMove 2s linear infinite;
+}
+
+@keyframes cactusMove {
+    0% {
+        right: -30px;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+#gameOver {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+}
